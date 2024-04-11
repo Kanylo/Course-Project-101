@@ -1,0 +1,61 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type TextBox}" x:Key="ProcessingElm">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border CornerRadius="10" Background="#373547" >
+
+                        <Grid>
+                            <Grid>
+                                <StackPanel Orientation="Vertical">
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Column="0" Text="Encode" Foreground="white" FontSize="28" FontFamily="Poppins" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                                        <TextBlock Grid.Column="1" Text="Result" Foreground="white" FontSize="28" FontFamily="Poppins" HorizontalAlignment="Right" Margin="0,0,0,10"/>
+                                    </Grid>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Border Width="400" 
+                                                Height="200"
+                                                Margin="0,0,0,10">
+
+                                            <Border.Background>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                                    <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                                                    <GradientStop Color="#3aa3ff" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                            <Border.Clip>
+                                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,400,200"/>
+                                            </Border.Clip>
+                                            <TextBox Width="255" HorizontalAlignment="Left" Grid.Column="1" Style="{StaticResource ModernTextbox}" Margin="10,5,0,5"/>
+
+                                        </Border>
+
+                                        <Border Width="380" Height="200" Margin="10,0,0,10" CornerRadius="10">
+                                            <Border.Background>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                                    <GradientStop Color="#ffc554" Offset="0.0"/>
+                                                    <GradientStop Color="#ffb73a" Offset="0.5"/>
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                            <TextBox Width="254" HorizontalAlignment="Left" Grid.Column="1" Style="{StaticResource ModernTextbox}" Margin="10,10,0,10"/>
+                                        </Border>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+
+                        </Grid>
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
