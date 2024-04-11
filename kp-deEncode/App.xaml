@@ -1,0 +1,40 @@
+﻿<Application x:Class="kp_deEncode.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:kp_deEncode"
+             xmlns:viewModel="clr-namespace:kp_deEncode.MVVM.ViewModel"
+             xmlns:view="clr-namespace:kp_deEncode.MVVM.View"
+             StartupUri="MainWindow.xaml"
+             xmlns:ui="http://schemas.modernwpf.com/2019">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemeResources />
+                <ui:XamlControlsResources />
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ProcessingElm.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AboutViewModel}">
+                <view:AboutView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:EncodeViewModel}">
+                <view:EncodeView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:DecodeViewModel}">
+                <view:DecodeView/>
+            </DataTemplate>
+
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
