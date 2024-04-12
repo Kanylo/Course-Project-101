@@ -3,38 +3,39 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:controls="clr-namespace:ModernWpf.Controls;assembly=ModernWpf.Controls"
         xmlns:local="clr-namespace:kp_deEncode"
         xmlns:viewModel="clr-namespace:kp_deEncode.MVVM.ViewModel"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="782" 
-        Width="1164"
+        Height="512" 
+        Width="1024"
         WindowStyle="none"
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
         MouseDown="Window_MouseDown"
-        xmlns:ui="http://schemas.modernwpf.com/2019"
-        ui:WindowHelper.UseModernWindowStyle="True">
+        >
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-
+    
     <Border Background="#3A3A3A" CornerRadius="20">
         <Grid>
-
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            
+            
 
-            <TextBlock Text="[D[e]n]code" 
+            <TextBlock Text="EnDecoder" 
                            VerticalAlignment="Center" 
                            HorizontalAlignment="Left"
                            Foreground="White" 
@@ -43,7 +44,7 @@
                            FontFamily="/Fonts/#Poppins">
             </TextBlock>
 
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="1" >
 
                 <RadioButton Content="Home" 
                              Height="50" 
@@ -51,18 +52,18 @@
                              FontFamily="/Fonts/#Poppins"
                              FontSize="18" 
                              Style="{StaticResource menuButtonTheme}" IsChecked="True"
-                             Command="{Binding HomeViewCommand}"/>
+                             Command="{Binding HomeViewCommand}" Width="200"/>
 
                 <RadioButton Content="Encode"
                              Height="50" 
-                             Foreground="DarkGray" 
+                             Foreground="#6D8FB7" 
                              FontSize="18" 
                              Style="{StaticResource menuButtonTheme}"
                              Command="{Binding EncodeViewCommand}"/>
 
                 <RadioButton Content="Decode" 
                              Height="50" 
-                             Foreground="DarkGray" 
+                             Foreground="#BCA4D2" 
                              FontSize="18" 
                              Style="{StaticResource menuButtonTheme}" FontFamily="/Fonts/#Poppins" 
                              Command="{Binding DecodeViewCommand}"/>
@@ -73,6 +74,12 @@
                              FontSize="18" 
                              Style="{StaticResource menuButtonTheme}"
                              Command="{Binding AboutViewCommand}"/>
+                <RadioButton Content="Exit"
+             Height="50" 
+             Foreground="#FF9999" 
+             FontSize="18" 
+             Style="{StaticResource menuButtonTheme}"
+             Command="{Binding ExitCommand}"/>
             </StackPanel>
             <!--<TextBox Width="250"
                      Height="40" 
@@ -83,6 +90,13 @@
                      Style="{StaticResource ModernTextbox}"/>-->
 
             <ContentControl Grid.Column="1" Margin="10,10,10,10" Content="{Binding CurrentView}" Grid.RowSpan="2"/>
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard Storyboard="{StaticResource FadeInAnimation}"/>
+                </EventTrigger>
+            </Grid.Triggers>
+
         </Grid>
     </Border>
+    
 </Window>

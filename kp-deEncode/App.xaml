@@ -5,16 +5,16 @@
              xmlns:viewModel="clr-namespace:kp_deEncode.MVVM.ViewModel"
              xmlns:view="clr-namespace:kp_deEncode.MVVM.View"
              StartupUri="MainWindow.xaml"
-             xmlns:ui="http://schemas.modernwpf.com/2019">
+            xmlns:prism="http://prismlibrary.com/" 
+
+    >
 
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ui:ThemeResources />
-                <ui:XamlControlsResources />
+        <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/TextBoxTheme.xaml"/>
-                <ResourceDictionary Source="Theme/ProcessingElm.xaml"/>
+                <ResourceDictionary Source="Theme/Animations.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">

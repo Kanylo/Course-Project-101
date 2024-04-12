@@ -9,6 +9,6 @@
              Background="#1b1b1b">
              
     <Grid>
-        <TextBlock Text="hi there" Foreground="White"/>
+        
     </Grid>
 </UserControl>

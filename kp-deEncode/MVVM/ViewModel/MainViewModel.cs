@@ -1,6 +1,7 @@
 ﻿using kp_deEncode.Core;
 using System.ComponentModel;
-
+using Prism.Mvvm;
+using System.Windows.Input;
 namespace kp_deEncode.MVVM.ViewModel
 {
 
@@ -14,6 +15,8 @@ namespace kp_deEncode.MVVM.ViewModel
         public AboutViewModel AboutVM { get; set; }
         public EncodeViewModel EncodeVM { get; set; }
         public DecodeViewModel DecodeVM { get; set; }
+        public ICommand EncodeCommand { get; private set; }
+        public ICommand ExitCommand { get; set; }
 
         private object _currentView;
 
@@ -29,10 +32,13 @@ namespace kp_deEncode.MVVM.ViewModel
 
         public MainViewModel()
         {
+            EncodeCommand = new RelayCommand(Encode);
+
             HomeVM = new HomeViewModel();
             AboutVM = new AboutViewModel();
             EncodeVM = new EncodeViewModel();
             DecodeVM = new DecodeViewModel();
+            ExitCommand = new RelayCommand(Exit);
 
             CurrentView = HomeVM;
 
@@ -64,6 +70,25 @@ namespace kp_deEncode.MVVM.ViewModel
         public void ScrollDown()
         {
             CurrentView = DecodeVM;
+        }
+
+        private void Encode(object obj)
+        {
+            if (CurrentView is EncodeViewModel encodeVM)
+            {
+                encodeVM.Output = Solving.EncodeToBase64(encodeVM.Input);
+            }
+        }
+        private void Decode(object obj)
+        {
+            if (CurrentView is DecodeViewModel decodeVM)
+            {
+                decodeVM.Output = Solving.DecodeFromBase64(decodeVM.Input);
+            }
+        }
+        private void Exit(object obj)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

@@ -4,7 +4,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border CornerRadius="10" Background="#373547" >
+                    <Border CornerRadius="10" Background="#3A3A3A" >
                        
                         <Grid>
                             <Rectangle StrokeThickness="1"/>
@@ -19,7 +19,6 @@
                                        HorizontalAlignment="Left" 
                                        Margin="10,10,10,10" 
                                        FontSize="11" 
-                                       Foreground="DarkGray"
                                        Grid.Column="1">
 
                                 <TextBlock.Style>

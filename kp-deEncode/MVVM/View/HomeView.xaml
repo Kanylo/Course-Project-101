@@ -12,12 +12,12 @@
         <StackPanel Orientation="Horizontal">
             <Border Width="400" 
                     Height="200"
-                    Margin="0,0,0,10">
+                    Margin="10,0,0,10">
 
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
-                        <GradientStop Color="#3aa3ff" Offset="1"/>
+                        <GradientStop Color="#4974a5" Offset="0.0"/>
+                        <GradientStop Color="#ffb73a" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
 
@@ -27,9 +27,13 @@
 
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Encoding solution&#x0a;To all your problems" Foreground="White" FontSize="28" Margin="20,10,10,0"/>
+                        <TextBlock Text="Encoding solution&#x0a;all you need is a start" Foreground="White" FontSize="28" Margin="20,10,10,0">
+                            <!--<TextBlock.InputBindings>
+                                <MouseBinding MouseAction="LeftClick" Command="{Binding DataContext.EncodeViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                            </TextBlock.InputBindings>-->
+                        </TextBlock>
 
-                        <TextBlock Text="Get Started  Today!" Foreground="White" FontSize="18" Margin="20,10,10,0"/>
+                        <TextBlock Text="Click to start!" Foreground="White" FontSize="18" Margin="20,10,10,0"/>
                     </StackPanel>
                 </Grid>
             </Border>
@@ -40,15 +44,20 @@
                     CornerRadius="10">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#ffc554" Offset="0.0"/>
+                        <GradientStop Color="#7a49a5" Offset="0.0"/>
                         <GradientStop Color="#ffb73a" Offset="0.5"/>
                     </LinearGradientBrush>
                 </Border.Background>
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Decoding Is Simple&#x0a;Decode all your problems" Foreground="DarkBlue" FontSize="28" Margin="20,10,10,0"/>
 
-                        <TextBlock Text="Get Started Today!" Foreground="DarkBlue" FontSize="18" Margin="20,10,10,0"/>
+                        <TextBlock Text="Decoding Is Simple&#x0a;Decrypt soulless machines" Foreground="DarkBlue" FontSize="28" Margin="20,10,10,0">
+                            <!--<TextBlock.InputBindings>
+                                <MouseBinding MouseAction="LeftClick" Command="{Binding DataContext.DecodeViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                            </TextBlock.InputBindings>-->
+                         </TextBlock>
+                        <TextBlock Text="Click to start!" Foreground="DarkBlue" FontSize="18" Margin="20,10,10,0"/>
+                       
                     </StackPanel>
                 </Grid>
             </Border>
