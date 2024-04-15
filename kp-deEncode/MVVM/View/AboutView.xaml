@@ -9,6 +9,20 @@
              Background="#1b1b1b">
              
     <Grid>
-        
+        <TextBlock Text="User Manual for EnDecoder&#x0a;Introduction&#x0a;EnDecoder  is a simple and intuitive application designed to encode and decode text using Base64 encoding.
+&#x0a;&#x0a;Getting Started!&#x0a;
+
+&#x0a;Features&#x0a;
+&#x0a;Encoding:&#x0a;
+1.	Navigate to the Encode View: Click on the Encode button on the home screen to navigate to the Encode view.
+&#x0a;2.	Enter Text: In the Encode view, enter the text you want to encode in the input field.
+&#x0a;3.	Encode: The application will automatically encode your input text to Base64 and display the result in the output field.
+&#x0a;Decoding: &#x0a;
+&#x0a;1.	Navigate to the Decode View: Click on the Decode button on the home screen to navigate to the Decode view.
+&#x0a;2.	Enter Text: In the Decode view, enter the Base64 encoded text you want to decode in the input field.
+&#x0a;3.	Decode: The application will automatically decode your input text from Base64 and display the result in the output field.
+&#x0a;Troubleshooting &#x0a;
+&#x0a;If you encounter any issues while using EnDecoder, 
+please restart the application. &#x0a;If the problem persists, please contact our support team." Foreground="LightGray" FontFamily="poppins" FontSize="13"/>
     </Grid>
 </UserControl>

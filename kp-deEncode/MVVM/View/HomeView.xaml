@@ -5,21 +5,36 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:kp_deEncode.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="471.735" d:DesignWidth="800">
+             d:DesignHeight="471.735" Width="824">
     <StackPanel>
         <TextBlock Text="Discover" Foreground="white" FontSize="28" HorizontalAlignment="Left"
  Margin="0,0,0,20"/>
         <StackPanel Orientation="Horizontal">
-            <Border Width="400" 
-                    Height="200"
-                    Margin="10,0,0,10">
-
+            <Border Width="400" Height="200" Margin="10,0,0,10">
                 <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#4974a5" Offset="0.0"/>
-                        <GradientStop Color="#ffb73a" Offset="1"/>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#FFCC75" Offset="0.0"/>
+                            <GradientStop Color="#ffb73a" Offset="0.4"/>
+                            <GradientStop Color="#E5A434" Offset="1.0"/>
+                        </LinearGradientBrush.GradientStops>
+                        <LinearGradientBrush.RelativeTransform>
+                            <RotateTransform x:Name="AnimatedGradientRotation" Angle="0" CenterX="0.5" CenterY="0.5"/>
+                        </LinearGradientBrush.RelativeTransform>
                     </LinearGradientBrush>
                 </Border.Background>
+                <Border.Triggers>
+                    <EventTrigger RoutedEvent="Border.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="AnimatedGradientRotation"
+                                     Storyboard.TargetProperty="Angle"
+                                     From="0" To="360" Duration="0:0:5"
+                                     RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Border.Triggers>
 
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,400,200"/>
@@ -27,37 +42,70 @@
 
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Encoding solution&#x0a;all you need is a start" Foreground="White" FontSize="28" Margin="20,10,10,0">
+                        <TextBlock Text="Encoding solution&#x0a;all you need is a start"  FontSize="28" Margin="20,10,10,0">
                             <!--<TextBlock.InputBindings>
                                 <MouseBinding MouseAction="LeftClick" Command="{Binding DataContext.EncodeViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                             </TextBlock.InputBindings>-->
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="#3A5C84" Offset="0.0"/>
+                                    <GradientStop Color="#1D2E42" Offset="0.5"/>
+                                    <GradientStop Color="#0E1721" Offset="0.8"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
                         </TextBlock>
 
-                        <TextBlock Text="Click to start!" Foreground="White" FontSize="18" Margin="20,10,10,0"/>
+                        <TextBlock Text="Click to start!" Foreground="#0F0B03" FontSize="18" Margin="20,10,10,0"/>
                     </StackPanel>
                 </Grid>
             </Border>
 
-            <Border Width="380" 
-                    Height="200"
-                    Margin="10,0,0,10"
-                    CornerRadius="10">
+            <Border Width="400" Height="200" Margin="10,0,0,10">
                 <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#7a49a5" Offset="0.0"/>
-                        <GradientStop Color="#ffb73a" Offset="0.5"/>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#688FBD" Offset="0.0"/>
+                            <GradientStop Color="#5E87B8" Offset="0.4"/>
+                            <GradientStop Color="#537FB4" Offset="1.0"/>
+                        </LinearGradientBrush.GradientStops>
+                        <LinearGradientBrush.RelativeTransform>
+                            <RotateTransform x:Name="AnimatedGradientRotation1" Angle="0" CenterX="0.5" CenterY="0.5"/>
+                        </LinearGradientBrush.RelativeTransform>
                     </LinearGradientBrush>
                 </Border.Background>
+                <Border.Triggers>
+                    <EventTrigger RoutedEvent="Border.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="AnimatedGradientRotation1"
+                         Storyboard.TargetProperty="Angle"
+                         From="0" To="360" Duration="0:0:5"
+                         RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Border.Triggers>
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,400,200"/>
+                </Border.Clip>
                 <Grid>
                     <StackPanel>
 
-                        <TextBlock Text="Decoding Is Simple&#x0a;Decrypt soulless machines" Foreground="DarkBlue" FontSize="28" Margin="20,10,10,0">
+                        <TextBlock Text="Decoding Is Simple&#x0a;Decrypt soulless machines"  FontSize="28" Margin="20,10,10,0">
                             <!--<TextBlock.InputBindings>
                                 <MouseBinding MouseAction="LeftClick" Command="{Binding DataContext.DecodeViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                             </TextBlock.InputBindings>-->
-                         </TextBlock>
-                        <TextBlock Text="Click to start!" Foreground="DarkBlue" FontSize="18" Margin="20,10,10,0"/>
-                       
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="#613A84" Offset="0.0"/>
+                                    <GradientStop Color="#152231" Offset="0.5"/>
+                                    <GradientStop Color="#0E1721" Offset="0.8"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                            
+                        </TextBlock>
+                        <TextBlock Text="Click to start!" Foreground="#0F0B03" FontSize="18" Margin="20,10,10,0"/>
+                        
                     </StackPanel>
                 </Grid>
             </Border>
